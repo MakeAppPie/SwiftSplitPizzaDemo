@@ -80,7 +80,6 @@ class MasterViewController: UITableViewController {
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath?) -> UITableViewCell {
-        //note I did not check for nil values. Something has to be really broken for these to be nil.
         let row = indexPath!.row   //get the array index from the index path
         let cell = tableView.dequeueReusableCellWithIdentifier("tableCell", forIndexPath: indexPath!) as UITableViewCell  //make the cell
         let myRowKey = pizza.typeList[row]  //the dictionary key

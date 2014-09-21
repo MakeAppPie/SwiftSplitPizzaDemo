@@ -13,7 +13,6 @@ class DetailViewController: UIViewController, UISplitViewControllerDelegate {
     @IBOutlet var pizzaSizeLabel: UILabel!
     @IBOutlet var pizzaTypeLabel: UILabel!
     @IBOutlet var pizzaPriceLabel: UILabel!
-    @IBOutlet var detailDescriptionLabel: UILabel!
     var pizza = Pizza()
     
     var masterPopoverController: UIPopoverController? = nil
