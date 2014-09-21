@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>CA9513ED-E4F2-4345-8E3C-416AAA531FA7</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SwiftSplitPizzaDemo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>EE40A3F1E9903C3BDCAD13BD570ED673BA8F5F8A</key>
+		<string>https://github.com/MakeAppPie/SwiftSplitPizzaDemo.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SwiftSplitPizzaDemo.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>EE40A3F1E9903C3BDCAD13BD570ED673BA8F5F8A</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/MakeAppPie/SwiftSplitPizzaDemo.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>EE40A3F1E9903C3BDCAD13BD570ED673BA8F5F8A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EE40A3F1E9903C3BDCAD13BD570ED673BA8F5F8A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SwiftSplitPizzaDemo</string>
+		</dict>
+	</array>
+</dict>
+</plist>

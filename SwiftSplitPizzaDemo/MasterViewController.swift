@@ -10,6 +10,7 @@ import UIKit
 
 class MasterViewController: UITableViewController {
 
+//MARK: Life Cycle
     var detailViewController: DetailViewController? = nil
     //var objects = NSMutableArray()
     var pizza = Pizza()
@@ -23,19 +24,20 @@ class MasterViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+/* Removed code for editing and use of bar buttons.
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
 
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
         self.navigationItem.rightBarButtonItem = addButton
-        let controllers = self.splitViewController.viewControllers
+*/
+        let controllers = self.splitViewController!.viewControllers
         self.detailViewController = controllers[controllers.endIndex-1].topViewController as? DetailViewController
         
         pizza.pizzaPricePerInSq["Pepperoni"] = 9.99
         
         //send the model to the detailItem
-        if (detailViewController){
+        if (detailViewController != nil ){
             self.detailViewController!.detailItem = pizza
-            
         }
         
     }
@@ -54,18 +56,18 @@ class MasterViewController: UITableViewController {
         self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
     }
 */
-    // #pragma mark - Segues
+//MARK: - Segues
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail" {
             let indexPath = self.tableView.indexPathForSelectedRow()
             //    let object = objects[indexPath.row] as NSDate
             //((segue.destinationViewController as UINavigationController).topViewController as DetailViewController).detailItem = object
-            pizza.pizzaType = pizza.typeList[indexPath.row] //set to the selected pizza
+            pizza.pizzaType = pizza.typeList[indexPath!.row] //set to the selected pizza
             ((segue.destinationViewController as UINavigationController).topViewController as DetailViewController).detailItem = pizza
         }
     }
-    // #pragma mark - Table View
+//MARK:  - Table View Delegates
     override func numberOfSectionsInTableView(tableView: UITableView?) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
@@ -79,18 +81,18 @@ class MasterViewController: UITableViewController {
     }
     
     
-    override func tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath?) -> UITableViewCell? {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath?) -> UITableViewCell {
         //note I did not check for nil values. Something has to be really broken for these to be nil.
         let row = indexPath!.row   //get the array index from the index path
-        let cell = tableView!.dequeueReusableCellWithIdentifier("tableCell", forIndexPath: indexPath) as UITableViewCell  //make the cell
+        let cell = tableView.dequeueReusableCellWithIdentifier("tableCell", forIndexPath: indexPath!) as UITableViewCell  //make the cell
         let myRowKey = pizza.typeList[row]  //the dictionary key
-        cell.textLabel.text = myRowKey
+        cell.textLabel!.text = myRowKey
         let myRowData = pizza.pizzaPricePerInSq[myRowKey]  //the dictionary value
-        cell.detailTextLabel.text = String(format: "%6.3f",myRowData!)
+        cell.detailTextLabel!.text = String(format: "%6.3f",myRowData!)
         return cell
     }
     
-    override func tableView(tableView: UITableView!, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
+    override func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 44.0
     }
 
@@ -112,7 +114,7 @@ class MasterViewController: UITableViewController {
         //let object = objects[indexPath.row] as NSDate
         //self.detailViewController!.detailItem = object
         pizza.pizzaType = pizza.typeList[indexPath.row] //set to the selected pizza
-        if (detailViewController){
+        if (detailViewController != nil){
             self.detailViewController!.detailItem = pizza //send the model to the detailItem
         }
 

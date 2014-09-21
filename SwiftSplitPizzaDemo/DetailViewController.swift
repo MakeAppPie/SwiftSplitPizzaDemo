@@ -22,15 +22,16 @@ class DetailViewController: UIViewController, UISplitViewControllerDelegate {
         didSet {
             // Update the view.
             self.configureView()
-
-            if self.masterPopoverController != nil {
+            
+            //Comment out this if clause if you don't want the Master to disappear.
+             if self.masterPopoverController != nil {
                 self.masterPopoverController!.dismissPopoverAnimated(true)
             }
         }
     }
 
     @IBAction func pizzaSizeButton(sender: UIButton) {
-         pizza.pizzaDiameter = pizza.diameterFromString(sender.titleLabel.text)
+         pizza.pizzaDiameter = pizza.diameterFromString(sender.titleLabel!.text!)
         configureView()
     }
     
@@ -55,7 +56,7 @@ class DetailViewController: UIViewController, UISplitViewControllerDelegate {
         
     }
     
-
+    //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -67,7 +68,7 @@ class DetailViewController: UIViewController, UISplitViewControllerDelegate {
         // Dispose of any resources that can be recreated.
     }
 
-    // #pragma mark - Split view
+    //MARK: - Split View
 
     func splitViewController(splitController: UISplitViewController, willHideViewController viewController: UIViewController, withBarButtonItem barButtonItem: UIBarButtonItem, forPopoverController popoverController: UIPopoverController) {
         barButtonItem.title = "Master" // NSLocalizedString(@"Master", @"Master")
